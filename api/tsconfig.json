@@ -23,7 +23,10 @@
       ]
     },
     "types": [
-      "@adonisjs/core"
+      "@adonisjs/core",
+      "@adonisjs/auth",
+      "@adonisjs/lucid",
+      "@adonisjs/session"
     ]
   }
 }
