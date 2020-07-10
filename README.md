@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/static/v1?label=License&message=MIT&color=green&labelColor=darkgreen&style=for-the-badge)]()
 <br/>
 <br/>
- An open source template for your personal website ! <br/>
+ An open source app for your personal website ! <br/>
  
  To use it refer you to the [documentation](#Guide).
 
@@ -31,7 +31,7 @@
 It's already finished, it's really quick to set up.
 
 ### Contributors
-* [Baptiste Permantier](https://github.com/LeadcodeDev)
+* [Baptiste Parmantier](https://github.com/LeadcodeDev)
 * [Alexandre Gossard](https://github.com/HakkaOfDev)
 
 ### License
