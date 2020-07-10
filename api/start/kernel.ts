@@ -20,9 +20,7 @@ import Server from '@ioc:Adonis/Core/Server'
 | are defined for all HTTP requests.
 |
 */
-Server.middleware.register([
-  'Adonis/Core/BodyParserMiddleware',
-])
+Server.middleware.register(['Adonis/Core/BodyParserMiddleware'])
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +39,5 @@ Server.middleware.register([
 |
 */
 Server.middleware.registerNamed({
+	auth: 'App/middleware/auth'
 })

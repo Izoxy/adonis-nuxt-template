@@ -31,4 +31,7 @@ Route.group(() => {
 			update: ['auth'],
 			delete: ['auth']
 		})
+	Route.post('/authentication/auth', 'AuthController.logout')
+	Route.post('/authentication/login', 'AuthController.login')
+	Route.post('/authentication/logout', 'AuthController.logout').middleware(['auth'])
 }).prefix('/api')
