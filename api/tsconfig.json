@@ -25,7 +25,8 @@
     "types": [
       "@adonisjs/core",
       "@adonisjs/auth",
-      "@adonisjs/lucid"
+      "@adonisjs/lucid",
+      "@adonisjs/session"
     ]
   }
 }

@@ -3,9 +3,8 @@ import { schema } from '@ioc:Adonis/Core/Validator'
 
 export default class AuthController {
 	public async login({ response, request, auth }: HttpContextContract) {
-		const rememberMe = !!request.input('remember_me')
-
 		try {
+			const rememberMe = !!request.input('remember_me')
 			const validator = schema.create({
 				email: schema.string({ trim: true }),
 				password: schema.string({ trim: true })

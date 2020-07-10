@@ -221,6 +221,16 @@
     cuid "^2.1.8"
     jest-worker "^26.0.0"
 
+"@adonisjs/session@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-3.0.4.tgz#fb14fba61e46154ac2e311a55896788cb7ae1329"
+  integrity sha512-L5V8u+ZJEo6ppWEPjTFC+VTvUNaDxs1jvky5LHkZofB9Ry/u51qqWtOBCqC+zCcP7UyxrzM2HKLm6uj0JDjn4w==
+  dependencies:
+    "@poppinss/utils" "^2.2.7"
+    cuid "^2.1.8"
+    fs-extra "^9.0.1"
+    ms "^2.1.2"
+
 "@adonisjs/sink@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@adonisjs/sink/-/sink-3.0.2.tgz#a3dd6dff30ae53a578f7bb7f61ed738ba9981253"

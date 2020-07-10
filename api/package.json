@@ -20,6 +20,7 @@
     "@adonisjs/core": "^5.0.0-preview-rc-1.9",
     "@adonisjs/fold": "^6.3.5",
     "@adonisjs/lucid": "^8.2.2",
+    "@adonisjs/session": "^3.0.4",
     "mysql": "^2.18.1",
     "proxy-addr": "^2.0.6",
     "reflect-metadata": "^0.1.13",

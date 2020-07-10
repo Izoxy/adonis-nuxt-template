@@ -7,13 +7,16 @@ export default class Users extends BaseModel {
 	public id: number
 
 	@column()
-	public firstname: String
+	public firstname: string
 
 	@column()
-	public lastname: String
+	public lastname: string
 
 	@column()
 	public email: string
+
+	@column()
+	public avatar: any
 
 	@column()
 	public password: string
