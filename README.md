@@ -38,4 +38,4 @@ It's already finished, it's really quick to set up.
 
 Distributed under the MIT License. See [License](https://github.com/Izoxy/adonis-nuxt-template/blob/master/LICENSE) for more information.
 
-###Made with ❤ by Izoxy
+### Made with ❤ by Izoxy
