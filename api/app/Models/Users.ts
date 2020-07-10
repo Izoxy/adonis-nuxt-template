@@ -7,6 +7,12 @@ export default class Users extends BaseModel {
 	public id: number
 
 	@column()
+	public firstname: String
+
+	@column()
+	public lastname: String
+
+	@column()
 	public email: string
 
 	@column()
