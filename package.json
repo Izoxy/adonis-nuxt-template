@@ -1,0 +1,30 @@
+{
+	"name": "adonis-nuxt-template",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"api": "cd ./api && yarn start",
+		"front": "cd ./frontend && yarn nuxt"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Izoxy/adonis-nuxt-template.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Izoxy/adonis-nuxt-template/issues"
+	},
+	"contributors": [
+		{
+			"name": "Baptiste Parmantier",
+			"email": "baptiste.parmantier.pro@gmail.com",
+			"url": "https://github.com/LeadcodeDev"
+		},
+		{
+			"name": "Alexandre Gossard",
+			"email": "frestytv@gmail.com",
+			"url": "https://github.com/HakkaOfDev"
+		}
+	],
+	"homepage": "https://github.com/Izoxy/adonis-nuxt-template#readme"
+}
