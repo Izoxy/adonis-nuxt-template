@@ -27,8 +27,5 @@
 			"url": "https://github.com/HakkaOfDev"
 		}
 	],
-	"homepage": "https://github.com/Izoxy/adonis-nuxt-template#readme",
-	"dependencies": {
-		"cross-env": "^7.0.2"
-	}
+	"homepage": "https://github.com/Izoxy/adonis-nuxt-template#readme"
 }
