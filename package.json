@@ -5,7 +5,7 @@
 	"scripts": {
 		"api": "cd ./api && yarn start",
 		"front": "cd ./frontend && yarn nuxt",
-		"build-template": "cd ./api && yarn install && node ace migration:run && cd ../frontend && yarn install"
+		"build-template": "cd ./api && yarn install && yarn build && node ace migration:run && cd ../frontend && yarn install"
 	},
 	"repository": {
 		"type": "git",
