@@ -50,5 +50,13 @@ export default class StoreValidator {
 	 *   'scores.*.number': 'Define scores as valid numbers'
 	 * }
 	 */
-	public messages = {}
+	public messages = {
+		required: 'Le champ {{ field }} est obligatoire',
+		'firstname.required': 'Le prénom est obligatoire',
+		'lastname.required': 'Le nom est obligatoire',
+		'email.required': "L'email est obligatoire",
+		'email.email': "L'email doit-être une adresse email valide",
+		'email.unique': "L'email existe déjà, veuillez en choisir une autre",
+		'password_confirmation.confirmed': "Le mot de passe n'a pas été confirmé ou est invalide"
+	}
 }
