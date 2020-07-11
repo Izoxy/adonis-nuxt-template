@@ -4,7 +4,7 @@
 	"description": "",
 	"scripts": {
 		"api": "cd ./api && yarn start",
-		"front": "cd ./frontend && yarn nuxt",
+		"front": "cd ./frontend && yarn dev",
 		"build-template": "cd ./api && yarn install && yarn build && node ace migration:run && cd ../frontend && yarn install"
 	},
 	"repository": {

@@ -16,22 +16,29 @@ export const plugins = createPersistedState({
 	},
 })
 
-export const mutations = {
-	login: async function (state, credentials) {
+export const actions = {
+	login: async function ({ commit }, payload) {
 		let user = {}
 		try {
-			const { data } = await this.$axios.post('/authentication/login', credentials)
+			const { data } = await this.$axios.post('/authentication/login', payload)
 			user = {
 				id: data.user.id,
 				identity: data.user.firstname + ' ' + data.user.lastname,
 			}
-			state.member = { ...state.member, user, logged: true }
-			this.$router.replace('/')
+			commit('login', { user, logged: true })
+			this.$toast.global.success({ message: 'Bienvenue ' + user.identity })
+			this.$router.replace('/').catch(() => {})
 		} catch (error) {
-			state.member = { ...state.member, user, logged: false }
+			commit('login', { user: {}, logged: false })
+			this.$toast.global.error({ message: 'Les identifiants sont incorrectes' })
 		}
 	},
-	reload: async function (state) {
+	logout: async function ({ commit }) {
+		await this.$axios.post('http://localhost:3333/api/authentication/logout')
+		commit('logout', { user: {}, logged: false })
+		this.$toast.global.success({ message: 'Déconnexion effectuée' })
+	},
+	reload: async function ({ commit }) {
 		let user = {}
 		try {
 			const { data } = await this.$axios.get('/authentication/auth')
@@ -39,17 +46,22 @@ export const mutations = {
 				id: data.user.id,
 				identity: data.user.firstname + ' ' + data.user.lastname,
 			}
-			state.member = { ...state.member, user, logged: true }
+			commit('reload', { user, logged: true })
 		} catch (error) {
-			state.member = { ...state.member, user, logged: false }
+			commit('reload', { user, logged: false })
+			this.$router.replace('/authentication/login').catch(() => {})
 		}
 	},
-	logout: async function (state) {
-		try {
-			await this.$axios.get('http://localhost:3333/api/authentication/logout')
-			state.member = { ...state.member, user: {}, logged: false }
-		} catch (error) {
-			state.member = { ...state.member, user: {}, logged: false }
-		}
+}
+
+export const mutations = {
+	login: async function (state, { user, logged }) {
+		state.member = { ...state.member, user, logged }
+	},
+	reload: async function (state, { user, logged }) {
+		state.member = { ...state.member, user, logged }
+	},
+	logout: async function (state, { user, logged }) {
+		state.member = { ...state.member, user, logged }
 	},
 }
