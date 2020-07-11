@@ -2,6 +2,9 @@ import Toasts from './configurations/Toasts'
 import BootstrapVue from './configurations/BootstrapVue'
 import Axios from './configurations/Axios'
 import Meta from './configurations/Meta'
+import Styles from './configurations/Styles'
+import Plugins from './configurations/Plugins'
+import Build from './configurations/Build'
 
 export default {
 	/*
@@ -17,23 +20,6 @@ export default {
 	target: 'server',
 
 	/*
-	 ** Headers of the page
-	 ** See https://nuxtjs.org/api/configuration-head
-	 */
-	head: Meta,
-
-	/*
-	 ** Global CSS
-	 */
-	css: [],
-
-	/*
-	 ** Plugins to load before mounting the App
-	 ** https://nuxtjs.org/guide/plugins
-	 */
-	plugins: [{ src: '~/plugins/localStorage.js', ssr: false }],
-
-	/*
 	 ** Auto import components
 	 ** See https://nuxtjs.org/api/configuration-components
 	 */
@@ -43,6 +29,7 @@ export default {
 	 ** Nuxt.js dev-modules
 	 */
 	buildModules: [],
+
 	/*
 	 ** Nuxt.js modules
 	 */
@@ -59,13 +46,19 @@ export default {
 	 ** Configurations file
 	 ** See ~/configurations/*
 	 */
-	bootstrapVue: BootstrapVue,
-	toast: Toasts,
-	axios: Axios,
 
-	/*
-	 ** Build configuration
-	 ** See https://nuxtjs.org/api/configuration-build/
-	 */
-	build: {},
+	// Headers module configuration
+	head: Meta,
+	// Global style module configuration
+	css: Styles,
+	// Plugins to load before mounting the App
+	plugins: Plugins,
+	// Bootstrat-vue module configuration
+	bootstrapVue: BootstrapVue,
+	// Toasts module configuration
+	toast: Toasts,
+	// Axios module configuration
+	axios: Axios,
+	// Build configuration
+	build: Build,
 }
