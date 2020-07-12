@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<b-navbar toggleable="lg" type="dark" variant="dark" sticky>
-			<b-navbar-brand href="#">App</b-navbar-brand>
+			<b-navbar-brand href="#">Izoxy</b-navbar-brand>
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
 			<b-collapse id="nav-collapse" is-nav>
