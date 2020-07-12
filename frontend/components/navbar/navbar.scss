@@ -4,3 +4,14 @@
 .b-avatar {
 	margin-right: 10px;
 }
+.navbar {
+	height: 70px;
+	@media screen and (min-width: 576px){
+		padding: 0 10%;
+	}
+
+	&-brand {
+		line-height: 56px;
+		height: 100%;
+	}
+}
