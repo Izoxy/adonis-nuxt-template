@@ -25,17 +25,17 @@ export const actions = {
 				id: data.user.id,
 				identity: data.user.firstname + ' ' + data.user.lastname,
 			}
-			await commit('login', { user, logged: true })
+			commit('login', { user, logged: true })
 			this.$toast.global.success({ message: 'Bienvenue ' + user.identity })
 			this.$router.replace('/').catch(() => {})
 		} catch (error) {
-			await commit('login', { user: {}, logged: false })
+			commit('login', { user: {}, logged: false })
 			this.$toast.global.error({ message: 'Les identifiants sont incorrectes' })
 		}
 	},
 	logout: async function ({ commit }) {
 		await this.$axios.post('http://localhost:3333/api/authentication/logout')
-		await commit('logout', { user: {}, logged: false })
+		commit('logout', { user: {}, logged: false })
 		this.$toast.global.success({ message: 'Déconnexion effectuée' })
 	},
 	reload: async function ({ commit }) {
@@ -46,9 +46,9 @@ export const actions = {
 				id: data.user.id,
 				identity: data.user.firstname + ' ' + data.user.lastname,
 			}
-			await commit('reload', { user, logged: true })
+			commit('reload', { user, logged: true })
 		} catch (error) {
-			await commit('reload', { user, logged: false })
+			commit('reload', { user, logged: false })
 			this.$router.replace('/authentication/login').catch(() => {})
 		}
 	},

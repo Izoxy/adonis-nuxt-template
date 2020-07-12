@@ -1,5 +1,5 @@
 export const actions = {
-	nuxtServerInit: async function ({ dispatch }) {
-		await dispatch('auth/reload')
+	nuxtServerInit: function ({ dispatch }) {
+		dispatch('auth/reload')
 	},
 }
