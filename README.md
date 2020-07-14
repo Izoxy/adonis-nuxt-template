@@ -22,7 +22,7 @@
 - [VueJS](https://vuejs.org/)
 - [NuxtJS](https://nuxtjs.org/)
 
-![Banner](https://github.com/Izoxy/adonis-nuxt-template/tree/master/assets/banner.png)
+![Banner](https://github.com/Izoxy/adonis-nuxt-template/blob/master/assets/banner.png)
 
 ## Summary
 * [Installation](#Installation)
