@@ -1,17 +1,15 @@
 <template>
 	<div>
 		<Header/>
+		<!-- It's an example for the utilisation of the sidebar
 		<b-row>
-			<b-col cols="3">
+			<b-col cols="2">
 				<Sidebar/>
 			</b-col>
-			<b-col cols="7">
-
-			</b-col>
-			<b-col cols="2">
-
+			<b-col cols="10">
 			</b-col>
 		</b-row>
+		-->
 	</div>
 </template>
 
