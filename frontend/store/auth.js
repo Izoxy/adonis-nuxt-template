@@ -18,50 +18,34 @@ export const plugins = createPersistedState({
 
 export const actions = {
 	login: async function ({ commit }, payload) {
-		let user = {}
-		try {
-			const { data } = await this.$axios.post('/authentication/login', payload)
-			user = {
-				id: data.user.id,
-				identity: data.user.firstname + ' ' + data.user.lastname,
-			}
-			commit('login', { user, logged: true })
+		const { data } = await this.$axios.post('/authentication/login', payload)
+		if (data) {
+			const user = { id: data.user.id, identity: data.user.firstname + ' ' + data.user.lastname }
+			commit('setup', { user, logged: true })
 			this.$toast.global.success({ message: 'Bienvenue ' + user.identity })
 			this.$router.replace('/').catch(() => {})
-		} catch (error) {
-			commit('login', { user: {}, logged: false })
+		} else {
 			this.$toast.global.error({ message: 'Les identifiants sont incorrectes' })
 		}
 	},
 	logout: async function ({ commit }) {
 		await this.$axios.post('http://localhost:3333/api/authentication/logout')
-		commit('logout', { user: {}, logged: false })
+		commit('setup', { user: {}, logged: false })
 		this.$toast.global.success({ message: 'Déconnexion effectuée' })
 	},
 	reload: async function ({ commit }) {
-		let user = {}
 		try {
 			const { data } = await this.$axios.get('/authentication/auth')
-			user = {
-				id: data.user.id,
-				identity: data.user.firstname + ' ' + data.user.lastname,
-			}
-			commit('reload', { user, logged: true })
+			commit('setup', { user: { id: data.user.id, identity: data.user.firstname + ' ' + data.user.lastname }, logged: true })
 		} catch (error) {
-			commit('reload', { user, logged: false })
+			commit('setup', { user: {}, logged: false })
 			this.$router.replace('/authentication/login').catch(() => {})
 		}
 	},
 }
 
 export const mutations = {
-	login: function (state, { user, logged }) {
-		state.member = { ...state.member, user, logged }
-	},
-	reload: function (state, { user, logged }) {
-		state.member = { ...state.member, user, logged }
-	},
-	logout: function (state, { user, logged }) {
+	setup: function (state, { user, logged }) {
 		state.member = { ...state.member, user, logged }
 	},
 }
