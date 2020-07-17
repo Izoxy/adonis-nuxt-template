@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "cross-env NODE_ENV=dev nuxt",
+		"dev": "cross-env NODE_ENV=developpement nuxt",
 		"build": "nuxt build",
 		"start": "nuxt start",
 		"export": "nuxt export",
@@ -11,6 +11,8 @@
 	},
 	"dependencies": {
 		"@nuxtjs/axios": "^5.11.0",
+		"@nuxtjs/robots": "^2.4.2",
+		"@nuxtjs/sitemap": "^2.4.0",
 		"@nuxtjs/toast": "^3.3.0",
 		"bootstrap": "^4.5.0",
 		"bootstrap-vue": "^2.15.0",

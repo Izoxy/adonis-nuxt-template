@@ -19,10 +19,10 @@ export default {
 		{ hid: 'og:title', name: 'og:title', content: 'Welcome to adonis nuxt template' },
 		{ hid: 'og:site_name', name: 'og:site_name', content: 'Adonis-nuxt-template' },
 		{ hid: 'og:locale', name: 'og:locale', content: 'fr' },
-		{ hid: 'og:image', name: 'og:image', content: 'assets/images/image.jpg' },
+		{ hid: 'og:image', name: 'og:image', content: '/images/image.jpg' },
 
 		{ name: 'msapplication-TileColor', content: '#0DA5FF' },
 		{ name: 'theme-color', content: '#0DA5FF' },
 	],
-	link: [{ rel: 'icon', type: 'image/jpg', href: 'assets/images/image.jpg' }],
+	link: [{ rel: 'icon', type: 'image/jpg', href: '/favicon.jpg' }],
 }

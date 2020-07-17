@@ -5,6 +5,9 @@ import Meta from './configurations/Meta'
 import Styles from './configurations/Styles'
 import Plugins from './configurations/Plugins'
 import Build from './configurations/Build'
+import Env from './configurations/Env'
+import Sitemap from './configurations/Sitemap'
+import Robots from './configurations/Robots'
 
 export default {
 	/*
@@ -40,6 +43,8 @@ export default {
 		'@nuxtjs/axios',
 		// Doc : https://github.com/nuxt-community/modules/tree/master/packages/toast
 		'@nuxtjs/toast',
+
+		'@nuxtjs/sitemap',
 	],
 
 	/**
@@ -47,6 +52,8 @@ export default {
 	 ** See ~/configurations/*
 	 */
 
+	// Environnements variables configuration
+	env: Env,
 	// Headers module configuration
 	head: Meta,
 	// Global style module configuration
@@ -61,4 +68,14 @@ export default {
 	axios: Axios,
 	// Build configuration
 	build: Build,
+	// Generate sitemap.xml in root folder
+	sitemap: Sitemap,
+	// Robot redirection
+	robots: Robots,
+
+	generate: {
+		minify: {
+			collapseWhitespace: false,
+		},
+	},
 }
