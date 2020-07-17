@@ -43,22 +43,60 @@ It's already finished, it's really quick to set up.
 ### Guide
 #### Master
 
+##### For Adonis
+
+The API is in `/api/app` and manage the connection with database to execute queries.
+
+###### Controllers
+
+The controllers are the main functions which manage the users, cookies and the authentication system.
+They are available in `/api/app/Controllers/Http`.
+
+###### Models
+
+The models are `BaseModel`, they serve to represent the tables from the database.
+They are available in `/api/app/Models`
+
+###### Validators
+
+The validators serve to catch many errors that the user may cause (wrong email, etc...)
+They are available in `/api/app/Validators/users`
+
+##### For Nuxt
+
 Here you can find the master from the application.
 <br>
 In `/layouts/master/master.vue`, you have the main layout.
 <br>
 You have also the index in `/pages/index.vue`
 
+#### Configurations 
+
+##### For Adonis
+In `/api/config` you can see all configs which used by Adonis.
+
+##### For Nuxt
+In `/frontend/configurations` you can see all modules which manage many functions (Build, Axios, Meta, Plugins, etc...).
+<br>
+There are all registered in the main nuxt config `/frontend/nuxt.config.js`.
+
 #### Middleware
 
 For a perfect routing, we use the middleware suggested by Adonis and those of Nuxt.
-In `/api/app/Middleware` and in `/front/middleware`.
+<br>
+In `/api/app/Middleware` and in `/frontend/middleware`.
+
+##### Routes
+
+The routes are registered in `/api/start/routes.ts`.
 
 #### Auth
 
 The authentication system is complexe.
 We have many files who manage the system. 
+<br>
 We use Adonis for the back-end, the part who manage the database is in `/api/app`.
+<br>
 Moreover, we have a specific usage from the Cookie to save the data from the users. You can find it in `/front/store`
 
 #### Components
