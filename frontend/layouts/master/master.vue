@@ -2,6 +2,7 @@
 	<div>
 		<client-only>
 			<Navbar />
+			<LangSwitcher />
 		</client-only>
 		<Nuxt />
 	</div>
@@ -9,10 +10,11 @@
 
 <script>
 import Navbar from '~/components/navbar/Navbar'
+import LangSwitcher from "~/components/langswitcher/LangSwitcher";
 
 export default {
 	name: 'master',
-	components: { Navbar },
+	components: { Navbar, LangSwitcher },
 }
 </script>
 

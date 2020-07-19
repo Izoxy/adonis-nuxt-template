@@ -21,15 +21,16 @@
 		"material-icons": "^0.3.1",
 		"node-sass": "^4.14.1",
 		"nuxt": "^2.13.3",
+		"nuxt-i18n": "^6.13.1",
 		"sass-loader": "^9.0.2",
 		"vue": "^2.6.11",
 		"vue-server-renderer": "^2.6.11",
-		"vue-template-compiler": "^2.6.11",
 		"vuex-persistedstate": "^3.0.1"
 	},
 	"devDependencies": {
 		"eslint-config-prettier": "^6.11.0",
 		"eslint-plugin-prettier": "^3.1.4",
-		"prettier": "^2.0.5"
+		"prettier": "^2.0.5",
+		"vue-template-compiler": "^2.6.11"
 	}
 }
