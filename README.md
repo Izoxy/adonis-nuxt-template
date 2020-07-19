@@ -122,7 +122,7 @@ Moreover, we have a specific usage from the Cookie to save the data from the use
 
 Here, we have the multi-language system. How to use it ? 
 <br>
-You need to add the [lang switcher](#Lang Switcher) in your layout for example.
+You need to add the [lang switcher](#LangSwitcher) in your layout for example.
 
 ##### Use the translation
 
@@ -157,7 +157,7 @@ Here you can find the different add-ons available in our template.
 - [Navbar](#Navbar)
 - [Header](#Header)
 - [Sidebar](#Sidebar)
-- [Lang Switcher](#Lang Switcher)
+- [Lang Switcher](#LangSwitcher)
 
 If you encounter difficulties with one or more components, do not hesitate to contact [us](https://github.com/Izoxy).
 
@@ -201,7 +201,7 @@ export default {
 }
 ```
 
-##### Lang Switcher
+##### LangSwitcher
 It's a simple button with a dropdown to change the language.
 You only have to import `<LangSwitcher/>` from `/components/langswitcher/LangSwitcher.vue`
 And need to do add this in `<script></script>`
