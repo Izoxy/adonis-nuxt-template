@@ -135,7 +135,7 @@ Example :
 
 ##### Add a language
 
-We need to add your lang in `/frontend/configurations/i18n.js` in the locales field like that :
+We need to add your lang in `/frontend/configurations/Translations.js` in the locales field like that :
 ```
 {
     code: 'en',

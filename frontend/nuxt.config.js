@@ -8,7 +8,7 @@ import Build from './configurations/Build'
 import Env from './configurations/Env'
 import Sitemap from './configurations/Sitemap'
 import Robots from './configurations/Robots'
-import i18n from './configurations/i18n'
+import Translations from './configurations/Translations'
 
 export default {
 	/*
@@ -76,7 +76,7 @@ export default {
 	// Robot redirection
 	robots: Robots,
 	// Lang
-	i18n: i18n,
+	translations: Translations,
 
 	generate: {
 		minify: {
