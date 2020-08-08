@@ -8,6 +8,7 @@ import Build from './configurations/Build'
 import Env from './configurations/Env'
 import Sitemap from './configurations/Sitemap'
 import Robots from './configurations/Robots'
+import Translations from './configurations/Translations'
 
 export default {
 	/*
@@ -45,6 +46,8 @@ export default {
 		'@nuxtjs/toast',
 
 		'@nuxtjs/sitemap',
+
+		'nuxt-i18n'
 	],
 
 	/**
@@ -72,6 +75,8 @@ export default {
 	sitemap: Sitemap,
 	// Robot redirection
 	robots: Robots,
+	// Lang
+	translations: Translations,
 
 	generate: {
 		minify: {

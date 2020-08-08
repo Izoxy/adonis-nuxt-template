@@ -14,6 +14,7 @@
 * Navbar included
 * Sidebar included
 * Header with Carousel
+* Multi-language
 
 ## Technologies used
 - [Bootstrap Vue](https://bootstrap-vue.org/docs/)
@@ -41,11 +42,30 @@
 It's already finished, it's really quick to set up.
 
 ### Guide
-#### Master
+#### Master - Sommaire
+
+* [Controllers](#Controllers)
+* [Models](#Models)
+* [Validators](#Validators)
+* [Layouts](#Layouts)
+* [Configurations](#Configurations)
+* [Middleware](#Middleware)
+<br> - Routes
+* [Configurations](#Configurations)
+* [Auth](#Auth)
+* [Lang](#Lang)
+<br> - Use the translation
+<br> - Add a language
+* [Components](#Components)
 
 ##### For Adonis
 
 The API is in `/api/app` and manage the connection with database to execute queries.
+
+##### For Nuxt
+
+You can also see the master of Nuxt in `/frontend` and see the main config in `/frontend/nuxt.config.js`.
+
 
 ###### Controllers
 
@@ -62,13 +82,13 @@ They are available in `/api/app/Models`
 The validators serve to catch many errors that the user may cause (wrong email, etc...)
 They are available in `/api/app/Validators/users`
 
-##### For Nuxt
+##### Layouts
 
 Here you can find the master from the application.
 <br>
 In `/layouts/master/master.vue`, you have the main layout.
 <br>
-You have also the index in `/pages/index.vue`
+You have also the index in `/frontend/pages/index.vue`
 
 #### Configurations 
 
@@ -91,7 +111,6 @@ In `/api/app/Middleware` and in `/frontend/middleware`.
 The routes are registered in `/api/start/routes.ts`.
 
 #### Auth
-
 The authentication system is complexe.
 We have many files who manage the system. 
 <br>
@@ -99,13 +118,46 @@ We use Adonis for the back-end, the part who manage the database is in `/api/app
 <br>
 Moreover, we have a specific usage from the Cookie to save the data from the users. You can find it in `/front/store`
 
-#### Components
+#### Lang
 
+Here, we have the multi-language system. How to use it ? 
+<br>
+You need to add the [lang switcher](#LangSwitcher) in your layout for example.
+
+##### Use the translation
+
+For use the translation and others, refer you to the nuxt-i18n [documentation](https://nuxt-community.github.io/nuxt-i18n/).
+
+Example :
+```
+{{ $t('welcome') }}
+```
+
+##### Add a language
+
+We need to add your lang in `/frontend/configurations/Translations.js` in the locales field like that :
+```
+{
+    code: 'en',
+    name: 'English',
+    file: 'en-US.js'
+}
+```
+And you need to create your lang file in `/frontend/locales` like that :
+
+```javascript
+export default {
+    welcome: 'Bienvenue',
+}
+```
+
+#### Components
 Here you can find the different add-ons available in our template.
 
 - [Navbar](#Navbar)
 - [Header](#Header)
 - [Sidebar](#Sidebar)
+- [Lang Switcher](#LangSwitcher)
 
 If you encounter difficulties with one or more components, do not hesitate to contact [us](https://github.com/Izoxy).
 
@@ -146,6 +198,18 @@ import Sidebar from "~/components/sidebar/Sidebar";
 export default {
     name: "YourComponentName",
     components: { Sidebar }
+}
+```
+
+##### LangSwitcher
+It's a simple button with a dropdown to change the language.
+You only have to import `<LangSwitcher/>` from `/components/langswitcher/LangSwitcher.vue`
+And need to do add this in `<script></script>`
+```javascript
+import LangSwitcher from "~/components/langswitcher/LangSwitcher";
+export default {
+    name: "YourComponentName",
+    components: { LangSwitcher }
 }
 ```
 

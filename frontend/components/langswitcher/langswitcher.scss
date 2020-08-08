@@ -1,0 +1,9 @@
+.switcher-container {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+
+	.dropdown {
+		border-radius: 50% !important;
+	}
+}
