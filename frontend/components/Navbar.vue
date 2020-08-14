@@ -10,10 +10,10 @@
 				</b-navbar-nav>
 
 				<b-navbar-nav class="ml-auto">
-					<b-nav-item-dropdown v-if="isLogged" right>
+					<b-nav-item-dropdown v-if="this.$auth.loggedIn" right>
 						<template v-slot:button-content>
 							<b-avatar></b-avatar>
-							{{ getFullName }}
+							{{ identity }}
 						</template>
 						<b-dropdown-item href="#">Mon profil</b-dropdown-item>
 						<b-dropdown-item @click="handleLogout">Se déconnecter</b-dropdown-item>
@@ -41,43 +41,54 @@
 </template>
 
 <script>
-	export default {
-		name: 'Navbar',
-		data() {
-			return {
-				form: {
-					email: '',
-					password: '',
-					remember_me: false,
+export default {
+	name: 'Navbar',
+	data() {
+		return {
+			form: {
+				email: '',
+				password: '',
+				remember_me: false,
+			},
+		}
+	},
+	methods: {
+		toggleModal: function () {
+			this.$refs['login-modal'].show()
+		},
+		handleLogout: async function () {
+			await this.$auth.logout()
+			await this.$router.push('/')
+		},
+		handleLogin: async function () {
+			await this.$auth.login({
+				data: {
+					email: this.form.email,
+					password: this.form.password,
+					remember_me: this.form.remember_me,
 				},
-			}
+			})
 		},
-		computed: {
-			isLogged() {
-				return this.$store.state.auth.member.logged
-			},
-			getFullName() {
-				return this.$store.state.auth.member.user.identity
-			},
+	},
+	computed: {
+		identity() {
+			return this.$auth.user.firstname + ' ' + this.$auth.user.lastname
 		},
-		methods: {
-			toggleModal: function () {
-				this.$refs['login-modal'].show()
-			},
-			handleLogout: async function () {
-				await this.$store.dispatch('auth/logout')
-				await this.$router.push('/')
-			},
-			handleLogin: async function () {
-				if (this.form.email !== '' && this.form.password !== '') {
-					await this.$store.dispatch('auth/login', this.form)
-					if (this.isLogged) {
-						this.$refs['login-modal'].hide()
-					}
-				}
-			},
-		},
-	}
+	},
+}
 </script>
 
-<style lang="scss" src="./navbar.scss" scoped></style>
+<style lang="scss" scoped>
+.custom-input-group {
+	margin-bottom: 10px !important;
+}
+.b-avatar {
+	margin-right: 10px;
+}
+.navbar {
+	height: 70px;
+	@media screen and (min-width: 576px) {
+		padding: 0 10%;
+	}
+}
+</style>

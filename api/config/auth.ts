@@ -5,7 +5,7 @@
  * file.
  */
 
-import Users from 'App/Models/Users'
+import User from 'App/Models/User'
 import { AuthConfig } from '@ioc:Adonis/Addons/Auth'
 
 /*
@@ -18,20 +18,36 @@ import { AuthConfig } from '@ioc:Adonis/Addons/Auth'
 |
 */
 const authConfig: AuthConfig = {
-  guard: 'web',
+  guard: 'api',
   list: {
     /*
     |--------------------------------------------------------------------------
-    | Web Guard
+    | OAT Guard
     |--------------------------------------------------------------------------
     |
-    | Web guard uses classic old school sessions for authenticating users.
-    | If you are building a standard web application, it is recommended to
-    | use web guard with session driver
+    | OAT (Opaque access tokens) guard uses database backed tokens to authenticate
+    | HTTP request. This guard DOES NOT rely on sessions or cookies and uses
+    | Authorization header value for authentication.
+    |
+    | Use this guard to authenticate mobile apps or web clients that cannot rely
+    | on cookies/sessions.
     |
     */
-    web: {
-      driver: 'session',
+    api: {
+      driver: 'oat',
+
+      /*
+      |--------------------------------------------------------------------------
+      | Tokens provider
+      |--------------------------------------------------------------------------
+      |
+      | Uses SQL database for managing tokens.
+      |
+      */
+      tokenProvider: {
+        driver: 'database',
+        table: 'api_tokens',
+      },
 
       provider: {
         /*
@@ -75,7 +91,7 @@ const authConfig: AuthConfig = {
         | The model to use for fetching or finding users
         |
         */
-        model: Users,
+        model: User,
       },
     },
   },

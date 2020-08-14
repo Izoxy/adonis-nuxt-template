@@ -10,6 +10,7 @@
 		"serve": "nuxt serve"
 	},
 	"dependencies": {
+		"@nuxtjs/auth": "^4.9.1",
 		"@nuxtjs/axios": "^5.11.0",
 		"@nuxtjs/robots": "^2.4.2",
 		"@nuxtjs/sitemap": "^2.4.0",

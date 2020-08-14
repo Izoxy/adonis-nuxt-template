@@ -1,38 +1,30 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { schema } from '@ioc:Adonis/Core/Validator'
 
 export default class AuthController {
-	public async login({ response, request, auth }: HttpContextContract) {
+	public async login({ request, auth }: HttpContextContract) {
+		const email = request.input('email')
+		const password = request.input('password')
+
 		try {
-			const rememberMe = !!request.input('remember_me')
-			const validator = schema.create({
-				email: schema.string({ trim: true }),
-				password: schema.string({ trim: true })
+			const token = await auth.use('api').attempt(email, password, {
+				expiresIn: '10 days'
 			})
-			const { email, password } = await request.validate({ schema: validator })
-			await auth.attempt(email, password, rememberMe)
-
-			return response.status(200).send({ user: auth.user })
+			return token.toJSON()
 		} catch (error) {
-			return response.status(400).send(error)
+			if (error.code === 'E_INVALID_AUTH_UID') return { error: "L'utilisateur n'a pas été trouvé" }
+			if (error.code === 'E_INVALID_AUTH_PASSWORD') return { error: "L'identifiant ou le mot de passe est incorrecte" }
 		}
 	}
 
-	public async logout({ response, auth }: HttpContextContract) {
+	public async logout({ auth }: HttpContextContract) {
 		try {
-			await auth.logout()
-			return response.status(200)
-		} catch (error) {
-			return response.status(400).send(error)
-		}
+			await auth.use('api').logout()
+			return { message: 'Vous avez été déconnecté' }
+		} catch (error) {}
 	}
 
-	public async auth({ response, auth }: HttpContextContract) {
-		try {
-			await auth.authenticate()
-			return response.status(200).send({ user: auth.user })
-		} catch (error) {
-			return response.status(401).send({ message: 'Unauthorized' })
-		}
+	public async user({ auth }: HttpContextContract) {
+		await auth.authenticate()
+		return { user: auth.user }
 	}
 }

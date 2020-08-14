@@ -1,8 +1,8 @@
+import Application from '@ioc:Adonis/Core/Application'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Users from 'App/Models/Users'
+import Users from 'App/Models/User'
 import StoreValidator from 'App/Validators/users/StoreValidator'
 import UpdateValidator from 'App/Validators/users/UpdateValidator'
-import Application from '@ioc:Adonis/Core/Application'
 
 export default class UsersController {
 	public async index({ response }: HttpContextContract) {
