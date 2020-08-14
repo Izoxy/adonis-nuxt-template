@@ -1,15 +1,4 @@
-import Toasts from './configurations/Toasts'
-import BootstrapVue from './configurations/BootstrapVue'
-import Axios from './configurations/Axios'
-import Meta from './configurations/Meta'
-import Styles from './configurations/Styles'
-import Plugins from './configurations/Plugins'
-import Build from './configurations/Build'
-import Env from './configurations/Env'
-import Sitemap from './configurations/Sitemap'
-import Robots from './configurations/Robots'
-import Translations from './configurations/Translations'
-import Auth from './configurations/Auth'
+import { Auth, Axios, BootstrapVue, Build, Env, Meta, Plugins, Robots, Sitemap, Styles, Toasts, Translations } from './configurations'
 
 export default {
 	/*
@@ -33,7 +22,7 @@ export default {
 	/*
 	 ** Nuxt.js dev-modules
 	 */
-	buildModules: [],
+	buildModules: ['@nuxt/typescript-build'],
 
 	/*
 	 ** Nuxt.js modules

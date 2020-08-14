@@ -3,13 +3,13 @@ export default {
 		{
 			code: 'en',
 			name: 'English',
-			file: 'en-US.js'
+			file: 'en-US.ts',
 		},
 		{
 			code: 'fr',
 			name: 'Français',
-			file: 'fr-FR.js'
-		}
+			file: 'fr-FR.ts',
+		},
 	],
 	strategy: 'no_prefix',
 	defaultLocale: 'en',
@@ -18,5 +18,5 @@ export default {
 	seo: true,
 	vueI18n: {
 		fallbackLocale: 'en',
-	}
+	},
 }
