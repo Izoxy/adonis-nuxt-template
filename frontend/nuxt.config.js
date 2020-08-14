@@ -81,7 +81,7 @@ export default {
 	// Robot redirection
 	robots: Robots,
 	// Lang
-	translations: Translations,
+	i18n: Translations,
 
 	generate: {
 		minify: {

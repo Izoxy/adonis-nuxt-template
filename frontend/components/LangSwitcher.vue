@@ -20,6 +20,9 @@ export default {
 			this.$i18n.setLocale(lang)
 		},
 	},
+	mounted() {
+		console.log(this.$i18n.locales)
+	},
 }
 </script>
 

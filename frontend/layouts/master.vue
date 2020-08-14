@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import { Navbar, LangSwitcher } from '~/components'
+import Navbar from '~/components/Navbar'
+import LangSwitcher from '~/components/LangSwitcher'
 
 export default {
 	name: 'master',
