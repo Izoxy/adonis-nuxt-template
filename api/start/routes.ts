@@ -22,7 +22,7 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.group(() => {
 	Route.resource('users', 'UsersController').apiOnly().middleware({})
-	Route.post('/authentication/auth', 'AuthController.logout')
+	Route.get('/authentication/user/me', 'AuthController.user')
 	Route.post('/authentication/login', 'AuthController.login')
 	Route.post('/authentication/logout', 'AuthController.logout')
 	Route.resource('cookies', 'CookiesController').apiOnly().only(['show', 'store'])

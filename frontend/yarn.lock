@@ -1214,7 +1214,21 @@
     webpack-node-externals "^2.5.0"
     webpackbar "^4.0.0"
 
-"@nuxtjs/axios@^5.11.0":
+"@nuxtjs/auth@^4.9.1":
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/auth/-/auth-4.9.1.tgz#8827e4d23bf901711423434ad4a7073a8fc51603"
+  integrity sha512-h5VZanq2+P47jq3t0EnsZv800cg/ufOPC6JqvcyeDFJM99p58jHSODAjDuePo3PrZxd8hovMk7zusU5lOHgjvQ==
+  dependencies:
+    "@nuxtjs/axios" "^5.9.5"
+    body-parser "^1.19.0"
+    consola "^2.11.3"
+    cookie "^0.4.0"
+    is-https "^1.0.0"
+    js-cookie "^2.2.1"
+    lodash "^4.17.15"
+    nanoid "^2.1.11"
+
+"@nuxtjs/axios@^5.11.0", "@nuxtjs/axios@^5.9.5":
   version "5.12.1"
   resolved "https://registry.yarnpkg.com/@nuxtjs/axios/-/axios-5.12.1.tgz#e26f83bca926a135708deda258cd58b7dc1c958f"
   integrity sha512-zRqCRN1Omp0aHZLbSlZTMH2i/2oafGJZbzBM1Aw0KzfwphofNJBIq0ue2k+fgbVXSX6fj53FNxL50sAwaGyAMA==
@@ -2024,7 +2038,7 @@ bn.js@^5.1.1:
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.1.2.tgz#c9686902d3c9a27729f43ab10f9d79c2004da7b0"
   integrity sha512-40rZaf3bUNKTVYu9sIeeEGOg7g14Yvnj9kH7b50EiwX0Q7A6umbvfI5tvHaOERH0XigqKkfLkFQxzb4e6CIXnA==
 
-body-parser@1.19.0:
+body-parser@1.19.0, body-parser@^1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
@@ -4734,6 +4748,11 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@~4.0.1:
   dependencies:
     is-extglob "^2.1.1"
 
+is-https@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-https/-/is-https-1.0.0.tgz#9c1dde000dc7e7288edb983bef379e498e7cb1bf"
+  integrity sha512-1adLLwZT9XEXjzhQhZxd75uxf0l+xI9uTSFaZeSESjL3E1eXSPpO+u5RcgqtzeZ1KCaNvtEwZSTO2P4U5erVqQ==
+
 is-https@^2.0.0, is-https@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/is-https/-/is-https-2.0.2.tgz#7009d303c72580f15897d5c063d6b6bc1f838fef"
@@ -5518,6 +5537,11 @@ nan@^2.12.1, nan@^2.13.2:
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.1.tgz#d7be34dfa3105b91494c3147089315eff8874b01"
   integrity sha512-isWHgVjnFjh2x2yuJ/tj3JbwoHu3UC2dX5G/88Cm24yB6YopVgxvBObDY7n5xW6ExmFhJpSEQqFPvq9zaXc8Jw==
+
+nanoid@^2.1.11:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.1.11.tgz#ec24b8a758d591561531b4176a01e3ab4f0f0280"
+  integrity sha512-s/snB+WGm6uwi0WjsZdaVcuf3KJXlfGl2LcxgwkEwJF0D/BWzVWAZW/XY4bFaiR7s0Jk3FPvlnepg1H1b1UwlA==
 
 nanoid@^3.1.10:
   version "3.1.12"

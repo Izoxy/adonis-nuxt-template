@@ -16,10 +16,15 @@ export default class AuthController {
 		}
 	}
 
-	public async logout({ auth }) {
+	public async logout({ auth }: HttpContextContract) {
 		try {
 			await auth.use('api').logout()
 			return { message: 'Vous avez été déconnecté' }
 		} catch (error) {}
+	}
+
+	public async user({ auth }: HttpContextContract) {
+		await auth.authenticate()
+		return { user: auth.user }
 	}
 }

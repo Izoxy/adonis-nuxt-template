@@ -4,13 +4,13 @@
 			<Navbar />
 			<LangSwitcher />
 		</client-only>
+		{{ this.$auth.loggedIn }}
 		<Nuxt />
 	</div>
 </template>
 
 <script>
-import Navbar from '~/components/navbar/Navbar'
-import LangSwitcher from "~/components/langswitcher/LangSwitcher";
+import { Navbar, LangSwitcher } from '~/components'
 
 export default {
 	name: 'master',
@@ -18,4 +18,9 @@ export default {
 }
 </script>
 
-<style lang="scss" src="./style.scss" scoped></style>
+<style lang="scss" scoped>
+body {
+	width: 100%;
+	min-height: 100%;
+}
+</style>

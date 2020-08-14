@@ -9,6 +9,7 @@ import Env from './configurations/Env'
 import Sitemap from './configurations/Sitemap'
 import Robots from './configurations/Robots'
 import Translations from './configurations/Translations'
+import Auth from './configurations/Auth'
 
 export default {
 	/*
@@ -42,12 +43,14 @@ export default {
 		'bootstrap-vue/nuxt',
 		// Doc: https://axios.nuxtjs.org/usage
 		'@nuxtjs/axios',
+		// Doc: https://auth.nuxtjs.org/
+		'@nuxtjs/auth',
 		// Doc : https://github.com/nuxt-community/modules/tree/master/packages/toast
 		'@nuxtjs/toast',
 
 		'@nuxtjs/sitemap',
 
-		'nuxt-i18n'
+		'nuxt-i18n',
 	],
 
 	/**
@@ -69,6 +72,8 @@ export default {
 	toast: Toasts,
 	// Axios module configuration
 	axios: Axios,
+	// Auth configuration
+	auth: Auth,
 	// Build configuration
 	build: Build,
 	// Generate sitemap.xml in root folder
