@@ -1,19 +1,13 @@
 export default {
-	localStorage: false,
-	cookie: {
-		options: {
-			expires: 10,
-		},
-	},
 	strategies: {
 		local: {
 			endpoints: {
-				login: { url: '/authentication/login', method: 'post', propertyName: 'token' },
-				logout: { url: '/authentication/logout', method: 'post' },
+				login: { url: '/authentication/web/login', method: 'post' },
+				logout: { url: '/authentication/web/logout', method: 'post' },
 				user: { url: '/authentication/user/me', method: 'get', propertyName: 'user' },
 			},
-			tokenType: 'bearer',
-			globalToken: true,
+			tokenRequired: false,
+			tokenType: false,
 		},
 	},
 }

@@ -30,9 +30,7 @@
 				<b-input-group prepend="🔒" class="custom-input-group mb-2 mr-sm-2 mb-sm-0">
 					<b-input v-model="form.password" type="password" placeholder="Password"></b-input>
 				</b-input-group>
-				<b-form-checkbox v-model="form.remember_me" name="remember-me" switch>
-					Se souvenir de moi
-				</b-form-checkbox>
+				<b-form-checkbox v-model="form.remember_me" name="remember-me" switch>Se souvenir de moi</b-form-checkbox>
 				<br />
 				<b-button @click.prevent="handleLogin">Connexion</b-button>
 			</b-form>

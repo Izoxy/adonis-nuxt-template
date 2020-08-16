@@ -18,9 +18,67 @@ import { AuthConfig } from '@ioc:Adonis/Addons/Auth'
 |
 */
 const authConfig: AuthConfig = {
-  guard: 'api',
-  list: {
-    /*
+	guard: 'web',
+	list: {
+		/*
+    |--------------------------------------------------------------------------
+    | Web Guard
+    |--------------------------------------------------------------------------
+    |
+    | Web guard uses classic old school sessions for authenticating users.
+    | If you are building a standard web application, it is recommended to
+    | use web guard with session driver
+    |
+    */
+		web: {
+			driver: 'session',
+
+			provider: {
+				/*
+        |--------------------------------------------------------------------------
+        | Driver
+        |--------------------------------------------------------------------------
+        |
+        | Name of the driver
+        |
+        */
+				driver: 'lucid',
+
+				/*
+        |--------------------------------------------------------------------------
+        | Identifier key
+        |--------------------------------------------------------------------------
+        |
+        | The identifier key is the unique key on the model. In most cases specifying
+        | the primary key is the right choice.
+        |
+        */
+				identifierKey: 'id',
+
+				/*
+        |--------------------------------------------------------------------------
+        | Uids
+        |--------------------------------------------------------------------------
+        |
+        | Uids are used to search a user against one of the mentioned columns. During
+        | login, the auth module will search the user mentioned value against one
+        | of the mentioned columns to find their user record.
+        |
+        */
+				uids: ['email'],
+
+				/*
+        |--------------------------------------------------------------------------
+        | Model
+        |--------------------------------------------------------------------------
+        |
+        | The model to use for fetching or finding users
+        |
+        */
+				model: User
+			}
+		},
+		/*
     |--------------------------------------------------------------------------
     | OAT Guard
     |--------------------------------------------------------------------------
@@ -33,10 +91,10 @@ const authConfig: AuthConfig = {
     | on cookies/sessions.
     |
     */
-    api: {
-      driver: 'oat',
+		api: {
+			driver: 'oat',
 
-      /*
+			/*
       |--------------------------------------------------------------------------
       | Tokens provider
       |--------------------------------------------------------------------------
@@ -44,13 +102,13 @@ const authConfig: AuthConfig = {
       | Uses SQL database for managing tokens.
       |
       */
-      tokenProvider: {
-        driver: 'database',
-        table: 'api_tokens',
-      },
+			tokenProvider: {
+				driver: 'database',
+				table: 'api_tokens'
+			},
 
-      provider: {
-        /*
+			provider: {
+				/*
         |--------------------------------------------------------------------------
         | Driver
         |--------------------------------------------------------------------------
@@ -58,9 +116,9 @@ const authConfig: AuthConfig = {
         | Name of the driver
         |
         */
-        driver: 'lucid',
+				driver: 'lucid',
 
-        /*
+				/*
         |--------------------------------------------------------------------------
         | Identifier key
         |--------------------------------------------------------------------------
@@ -69,9 +127,9 @@ const authConfig: AuthConfig = {
         | the primary key is the right choice.
         |
         */
-        identifierKey: 'id',
+				identifierKey: 'id',
 
-        /*
+				/*
         |--------------------------------------------------------------------------
         | Uids
         |--------------------------------------------------------------------------
@@ -81,9 +139,9 @@ const authConfig: AuthConfig = {
         | of the mentioned columns to find their user record.
         |
         */
-        uids: ['email'],
+				uids: ['email'],
 
-        /*
+				/*
         |--------------------------------------------------------------------------
         | Model
         |--------------------------------------------------------------------------
@@ -91,10 +149,10 @@ const authConfig: AuthConfig = {
         | The model to use for fetching or finding users
         |
         */
-        model: User,
-      },
-    },
-  },
+				model: User
+			}
+		}
+	}
 }
 
 export default authConfig

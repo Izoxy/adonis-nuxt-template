@@ -217,7 +217,7 @@
     cuid "^2.1.8"
     jest-worker "^26.1.0"
 
-"@adonisjs/session@^3.0.4":
+"@adonisjs/session@^3.0.8":
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-3.0.8.tgz#e60fef91f430419565b45e2cc79af46cb367947c"
   integrity sha512-qj4WlmF8IKtVLY+3vvQza9UalvE28DKXtCeUjJ+GE3lLwquoBfbc7EtBvYymo+q07/ldz8oa3Ve+DL3QdUK4QA==
