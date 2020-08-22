@@ -1,4 +1,4 @@
-import { Auth, Axios, BootstrapVue, Build, Env, Meta, Plugins, Robots, Sitemap, Styles, Toasts, Translations } from './configurations'
+import { Auth, Axios, BootstrapVue, Meta, Robots, Sitemap, Toasts, Translations } from './config'
 
 export default {
 	/*
@@ -24,54 +24,78 @@ export default {
 	 */
 	buildModules: ['@nuxt/typescript-build'],
 
+	/**
+	 ** Nuxt build folder
+	 */
+	buildDir: 'build',
+
+	/**
+	 ** Nuxt src folder
+	 */
+	srcDir: 'src',
+
 	/*
 	 ** Nuxt.js modules
+	 ** See ~/configurations/*
 	 */
 	modules: [
 		// Doc: https://bootstrap-vue.js.org
-		'bootstrap-vue/nuxt',
+		['bootstrap-vue/nuxt', { BootstrapVue }],
+
 		// Doc: https://axios.nuxtjs.org/usage
-		'@nuxtjs/axios',
+		['@nuxtjs/axios', { Axios }],
+
 		// Doc: https://auth.nuxtjs.org/
-		'@nuxtjs/auth',
+		['@nuxtjs/auth', { Auth }],
+
 		// Doc : https://github.com/nuxt-community/modules/tree/master/packages/toast
-		'@nuxtjs/toast',
+		['@nuxtjs/toast', { Toasts }],
 
-		'@nuxtjs/sitemap',
+		// Doc : https://github.com/nuxt-community/sitemap-module
+		['@nuxtjs/sitemap', { Sitemap }],
 
-		'nuxt-i18n',
+		// Doc : https://i18n.nuxtjs.org/
+		['nuxt-i18n', { Translations }],
+
+		// Doc : https://github.com/nuxt-community/robots-module
+		['@nuxtjs/robots', { Robots }],
 	],
 
 	/**
-	 ** Configurations file
-	 ** See ~/configurations/*
+	 ** Environnements variables settings
+	 ** Don't forget to specifie 'process.client'
+	 ** if you want to use 'window' or 'document'
 	 */
+	env: {},
 
-	// Environnements variables configuration
-	env: Env,
-	// Headers module configuration
+	/**
+	 ** Headers module settings
+	 ** See https://fr.nuxtjs.org/guides/configuration-glossary/configuration-head/
+	 */
 	head: Meta,
-	// Global style module configuration
-	css: Styles,
-	// Plugins to load before mounting the App
-	plugins: Plugins,
-	// Bootstrat-vue module configuration
-	bootstrapVue: BootstrapVue,
-	// Toasts module configuration
-	toast: Toasts,
-	// Axios module configuration
-	axios: Axios,
-	// Auth configuration
-	auth: Auth,
-	// Build configuration
-	build: Build,
-	// Generate sitemap.xml in root folder
-	sitemap: Sitemap,
-	// Robot redirection
-	robots: Robots,
-	// Lang
-	i18n: Translations,
 
+	/**
+	 ** Global style module settings
+	 ** See https://fr.nuxtjs.org/guides/configuration-glossary/configuration-css
+	 */
+	css: ['material-icons/iconfont/material-icons.scss'],
+
+	/*
+	 ** Plugins to load before mounting the App
+	 ** https://nuxtjs.org/guide/plugins
+	 */
+	plugins: [],
+
+	/**
+	 ** Build settings
+	 ** See https://fr.nuxtjs.org/guides/configuration-glossary/configuration-build/
+	 */
+	build: {},
+
+	/**
+	 ** Nuxt generation settings
+	 ** See https://fr.nuxtjs.org/api/configuration-generate/
+	 */
 	generate: {
 		minify: {
 			collapseWhitespace: false,
