@@ -101,4 +101,13 @@ export default {
 			collapseWhitespace: false,
 		},
 	},
+
+	/**
+	 ** Nuxt transition settings
+	 ** See https://fr.nuxtjs.org/api/configuration-transition
+	 */
+	pageTransition: {
+		name: 'page',
+		mode: 'out-in',
+	},
 }
