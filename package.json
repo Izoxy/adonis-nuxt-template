@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"api": "cd ./api && yarn start",
-		"front": "cd ./frontend && yarn dev",
-		"build-template": "cd ./api && yarn install && yarn build && node ace migration:run && cd ../frontend && yarn install"
+		"api": "cd ./server && yarn start",
+		"front": "cd ./client && yarn dev",
+		"build-template": "cd ./server && yarn install && yarn build && node ace migration:run && cd ../client && yarn install"
 	},
 	"repository": {
 		"type": "git",
