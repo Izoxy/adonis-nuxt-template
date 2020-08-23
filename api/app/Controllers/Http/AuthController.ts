@@ -5,9 +5,13 @@ export default class AuthController {
 		const email = request.input('email')
 		const password = request.input('password')
 		const remember_me = !!request.input('remember_me')
-
-		await auth.attempt(email, password, remember_me)
-		return { user: auth.user }
+		try {
+			await auth.attempt(email, password, remember_me)
+			return { user: auth.user }
+		} catch (error) {
+			if (error.code === 'E_INVALID_AUTH_UID') return { error: "L'utilisateur n'a pas été trouvé" }
+			if (error.code === 'E_INVALID_AUTH_PASSWORD') return { error: "L'identifiant ou le mot de passe est incorrecte" }
+		}
 	}
 
 	public async logoutWeb({ auth }: HttpContextContract) {
@@ -31,6 +35,7 @@ export default class AuthController {
 	}
 
 	public async user({ auth }: HttpContextContract) {
+		console.log('auth')
 		await auth.authenticate()
 		return { user: auth.user }
 	}

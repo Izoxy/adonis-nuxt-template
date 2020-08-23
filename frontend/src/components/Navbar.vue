@@ -59,13 +59,17 @@ export default {
 			await this.$router.push('/')
 		},
 		handleLogin: async function () {
-			await this.$auth.login({
-				data: {
-					email: this.form.email,
-					password: this.form.password,
-					remember_me: this.form.remember_me,
-				},
-			})
+			try {
+				await this.$auth.loginWith('local', {
+					data: {
+						email: this.form.email,
+						password: this.form.password,
+						remember_me: this.form.remember_me,
+					},
+				})
+			} catch (error) {
+				console.log(error)
+			}
 		},
 	},
 	computed: {

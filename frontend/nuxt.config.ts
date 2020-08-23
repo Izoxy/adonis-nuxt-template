@@ -13,6 +13,8 @@ export default {
 	 */
 	target: 'server',
 
+	debug: true,
+
 	/*
 	 ** Auto import components
 	 ** See https://nuxtjs.org/api/configuration-components
@@ -49,25 +51,25 @@ export default {
 	 */
 	modules: [
 		// Doc: https://bootstrap-vue.js.org
-		['bootstrap-vue/nuxt', { BootstrapVue }],
+		['bootstrap-vue/nuxt', BootstrapVue],
 
 		// Doc: https://axios.nuxtjs.org/usage
-		['@nuxtjs/axios', { Axios }],
+		['@nuxtjs/axios', Axios],
 
 		// Doc: https://auth.nuxtjs.org/
-		['@nuxtjs/auth', { Auth }],
+		['@nuxtjs/auth', Auth],
 
 		// Doc : https://github.com/nuxt-community/modules/tree/master/packages/toast
-		['@nuxtjs/toast', { Toasts }],
+		['@nuxtjs/toast', Toasts],
 
 		// Doc : https://github.com/nuxt-community/sitemap-module
-		['@nuxtjs/sitemap', { Sitemap }],
+		['@nuxtjs/sitemap', Sitemap],
 
 		// Doc : https://i18n.nuxtjs.org/
-		['nuxt-i18n', { Translations }],
+		['nuxt-i18n', Translations],
 
 		// Doc : https://github.com/nuxt-community/robots-module
-		['@nuxtjs/robots', { Robots }],
+		['@nuxtjs/robots', Robots],
 	],
 
 	/**
