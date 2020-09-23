@@ -1,21 +1,18 @@
 <template>
 	<div>
 		<client-only>
-			<Navbar />
 			<LangSwitcher />
 		</client-only>
-		{{ this.$auth.loggedIn }}
 		<Nuxt />
 	</div>
 </template>
 
 <script>
-import Navbar from '~/components/Navbar'
 import LangSwitcher from '~/components/LangSwitcher'
 
 export default {
 	name: 'master',
-	components: { Navbar, LangSwitcher },
+	components: { LangSwitcher },
 }
 </script>
 

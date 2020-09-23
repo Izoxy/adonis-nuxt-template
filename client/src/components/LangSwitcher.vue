@@ -1,9 +1,9 @@
 <template>
 	<div class="switcher-container">
-		<b-dropdown id="dropdown-dropup" dropup :text="this.$i18n.locale.toUpperCase()" variant="primary" class="m-2">
-			<b-dropdown-header id="dropdown-header-label">{{ $t('headerLangs') }}</b-dropdown-header>
-			<b-dropdown-item v-for="(lang, key) in availableLocales" @click.prevent="changeLanguage(lang.code)" :key="key">{{ lang.code.toUpperCase() }}</b-dropdown-item>
-		</b-dropdown>
+		<div style="display: inline-flex;" :text="this.$i18n.locale.toUpperCase()" variant="primary" class="m-2">
+			<div id="dropdown-header-label">{{ $t('headerLangs') }}</div>
+			<div style="margin-left: 5px; cursor: pointer;" v-for="(lang, key) in availableLocales" :key="key" @click.prevent="changeLanguage(lang.code)">{{ lang.code.toUpperCase() }}</div>
+		</div>
 	</div>
 </template>
 
@@ -20,17 +20,18 @@ export default {
 			this.$i18n.setLocale(lang)
 		},
 	},
-	mounted() {
-		console.log(this.$i18n.locales)
-	},
 }
 </script>
 
 <style lang="scss" scoped>
 .switcher-container {
 	position: fixed;
-	bottom: 5px;
-	right: 5px;
+	bottom: 10px;
+	right: 10px;
+	background-color: #5a45ff;
+	color: white;
+	padding: 0.8rem;
+	border-radius: 24px;
 
 	.dropdown {
 		border-radius: 50% !important;

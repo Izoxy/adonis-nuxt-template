@@ -1,4 +1,5 @@
 export default {
-	welcome: 'Welcome to Adonis-Nuxt app !',
-	headerLangs: 'Choose your language.'
+	welcome: 'Welcome to <span style="color: #5a45ff;">Adonis</span>, <span style="color: #108775;">Nuxt</span> app !',
+	headerLangs: 'Switch lanagage to',
+	description: 'Create a fast, efficient and powerful application thanks to this model combining the best combination of technologies',
 }

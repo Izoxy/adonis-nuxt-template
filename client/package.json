@@ -15,8 +15,6 @@
 		"@nuxtjs/robots": "^2.4.2",
 		"@nuxtjs/sitemap": "^2.4.0",
 		"@nuxtjs/toast": "^3.3.0",
-		"bootstrap": "^4.5.0",
-		"bootstrap-vue": "^2.15.0",
 		"cross-env": "^7.0.2",
 		"js-cookie": "^2.2.1",
 		"material-icons": "^0.3.1",

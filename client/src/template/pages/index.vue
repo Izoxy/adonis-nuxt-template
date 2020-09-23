@@ -1,7 +1,7 @@
 <template>
 	<div class="main">
-		<img src="https://github.com/Izoxy/adonis-nuxt-template/blob/master/assets/banner.png?raw=true" alt="" />
-		<h1>{{ $t('welcome') }}</h1>
+		<h1 v-html="$t('welcome')"></h1>
+		<p>{{ $t('description') }}</p>
 	</div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 50%;
+	width: 40%;
 	margin: auto;
 }
 img {
@@ -25,5 +25,11 @@ img {
 }
 h1 {
 	text-align: center;
+}
+p {
+	margin: auto;
+	text-align: center;
+	opacity: 0.5;
+	width: 80%;
 }
 </style>

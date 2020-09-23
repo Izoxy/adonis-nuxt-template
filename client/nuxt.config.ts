@@ -50,9 +50,6 @@ export default {
 	 ** See ~/configurations/*
 	 */
 	modules: [
-		// Doc: https://bootstrap-vue.js.org
-		['bootstrap-vue/nuxt', BootstrapVue],
-
 		// Doc: https://axios.nuxtjs.org/usage
 		['@nuxtjs/axios', Axios],
 
