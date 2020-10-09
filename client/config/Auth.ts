@@ -10,4 +10,11 @@ export default {
 			tokenType: false,
 		},
 	},
+	redirect: {
+		login: '/authentication/login',
+		logout: '/',
+		callback: '/account',
+		home: '/',
+	},
+	resetOnError: true,
 }
