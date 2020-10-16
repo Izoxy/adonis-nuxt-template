@@ -1,0 +1,67 @@
+MACHINE_IP: <ip>
+
+client_name: <client>
+client_image: <client-image>
+
+server_name: <server>
+server_image: <server-image>
+
+network: <network>
+network_name: <network_name>
+
+database_user: <user>
+database_password: <password>
+
+version: '3'
+services:
+    nginx:
+        container_name: nginx
+        image: nginx
+        networks:
+            - {{ network }}
+        ports:
+            - '80:80'
+        volumes:
+            - ./templates:/etc/nginx/templates
+
+
+    mysql:
+        container_name: mysql
+        image: mariadb
+        networks:
+            - {{ network }}
+        environment:
+            MYSQL_USER: {{ database_user }}
+            MYSQL_ROOT_PASSWORD: {{ database_password }}
+        volumes:
+            - mysql:/var/lib/mysql
+
+    portfolio-server:
+        container_name: {{ server_name }}
+        build: .
+        image: {{ server_image }}
+        hostname: {{ server_name }}
+        networks:
+            - {{ network }}
+        environment:
+            DB_USER: {{ database_user }}
+            DB_PASSWORD: {{ database_password }}
+
+    portfolio-client:
+        container_name: {{ client_name }}
+        build: .
+        image: {{ client_image }}
+        networks:
+            - {{ network }}
+        ports:
+            - '3000:3000'
+        environment:
+            PORTFOLIO_API: http://{{ MACHINE_IP }}:80/api
+
+networks:
+    {{ network }}:
+        name: {{ network_name }}
+
+volumes:
+    mysql:
+        driver: local
