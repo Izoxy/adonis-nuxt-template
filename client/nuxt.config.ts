@@ -1,4 +1,4 @@
-import { Auth, Axios, BootstrapVue, Meta, Robots, Sitemap, Toasts, Translations } from './config'
+import { Auth, Axios, BootstrapVue, Meta, Robots, Sitemap, Toasts, Translations, GoogleAnalytics } from './config'
 
 export default {
 	/*
@@ -24,7 +24,7 @@ export default {
 	/*
 	 ** Nuxt.js dev-modules
 	 */
-	buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api'],
+	buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api', ['@nuxtjs/google-analytics', GoogleAnalytics]],
 
 	/**
 	 ** Nuxt build folder

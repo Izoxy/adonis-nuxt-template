@@ -6,5 +6,6 @@ import Robots from './Robots'
 import Sitemap from './Sitemap'
 import Toasts from './Toasts'
 import Translations from './Translations'
+import GoogleAnalytics from './GoogleAnalytics'
 
-export { Auth, Axios, BootstrapVue, Meta, Robots, Sitemap, Toasts, Translations }
+export { Auth, Axios, BootstrapVue, Meta, Robots, Sitemap, Toasts, Translations, GoogleAnalytics }
